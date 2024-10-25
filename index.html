@@ -33,7 +33,7 @@
                         <a class="nav-link" href="#">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-primary" href="#" role="button">Subscribe</a>
+                        <a class="btn btn-primary rounded-pill" href="#" role="button">Subscribe</a>
                     </li>
                 </ul>
             </div>
@@ -42,30 +42,56 @@
     <!-- Nav-bar End -->
 
     <!-- Carousel -->
-    <div id="carouselExampleFade" class="carousel slide carousel-fade">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/cook.jpg" class="d-block w-50" alt="...">
+    <div class="container">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade justify-content-center" style="width: 100%;">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/cook.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/bay.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/family.jpg" class="d-block w-100" alt="...">
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="images/bay.jpg" class="d-block w-50" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="images/family.jpg" class="d-block w-50" alt="...">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- Carousel End -->
+        <div class="grid gap-0">
+            <p class="fs-3 mb-0 mt-2">Welcome to the Lifestyle Hub</p>
+            <p class="fs-5 text-body-secondary mt-0">Explore trends, wellness, and living your best life</p>
+            <p class="fs-5">Lifestyle is all about finding balance, embracing health, and living in the moment. Whether
+                you're into fitness,
+                mindfulness, or just looking to elevate your daily routines, you've come to the right place.</p>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <p class="fs-3 mt-4">Latest in Wellness</p>
+        <form class="d-flex mb-3 lg-xl" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="card" style="width: 18rem;">
+            <img src="images/news1.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Apakah "Pound Fit" Bisa Dilakukan di Rumah Tanpa Instruktur?</h5>
+                <p class="card-text">Pernahkah kamu melihat sekelompok orang yang sedang latihan pound fit?</p>
+                <a href="https://lifestyle.kompas.com/read/2024/10/25/091045120/apakah-pound-fit-bisa-dilakukan-di-rumah-tanpa-instruktur"
+                    class="btn btn-primary">Visit Site</a>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
-    <!-- Carousel End -->
-
-
 </body>
 
 <script>
