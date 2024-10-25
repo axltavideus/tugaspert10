@@ -81,12 +81,13 @@
         <p class="fs-5 text-body-secondary mt-0">Discover the latest trends in wellness, from meditation techniques to
             fitness tips that
             keep you grounded and healthy.</p>
-        <form class="d-flex mb-3 lg-xl" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex mb-3 lg-xl" role="search" action="search.html" method="GET">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
 
-        <div class="row grid gap-3 column-gap-3 ms-0">
+
+        <div class="row grid gap-3 column-gap-3 ms-0" id="wellness-cards">
             <div class="card" style="width: 18rem;"> <!-- Card -->
                 <img src="images/news1.jpeg" class="card-img-top mt-2" alt="...">
                 <div class="card-body">
@@ -136,50 +137,56 @@
                 Explore Options
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="#">Fashion</a></li>
-                <li><a class="dropdown-item" href="#">Trends</a></li>
+                <li><a class="dropdown-item" href="#" data-filter="all">All</a></li>
+                <li><a class="dropdown-item" href="#" data-filter="fashion">Fashion</a></li>
+                <li><a class="dropdown-item" href="#" data-filter="trends">Trends</a></li>
             </ul>
         </div>
 
-        <div class="row grid gap-3 column-gap-3 ms-0 mt-3">
-            <div class="card" style="width: 18rem;"> <!-- Card -->
+        <div class="row grid gap-3 column-gap-3 ms-0 mt-3" id="fashion-cards">
+            <div class="card" style="width: 18rem;" data-tag="fashion"> <!-- Fashion card -->
                 <img src="images/fashion1.webp" class="card-img-top mt-2" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">IN2MF 2024 Dorong Akselerasi Pengembangan Sektor Modest Fashion di Indonesia
                     </h5>
                     <p class="card-text text-body-secondary">Bank Indonesia, Kementerian Koperasi dan UKM RI, dan
-                        Indonesian Fashion Chamber</p>
-                    <a href=https://www.beritasatu.com/ekonomi/2850792/in2mf-2024-dorong-akselerasi-pengembangan-sektor-modest-fashion-di-indonesia
+                        Indonesian
+                        Fashion Chamber</p>
+                    <a href="https://www.beritasatu.com/ekonomi/2850792/in2mf-2024-dorong-akselerasi-pengembangan-sektor-modest-fashion-di-indonesia"
                         class="btn btn-secondary">Visit Site</a>
                     <div class="btn btn-light">Fashion</div>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;"> <!-- Card -->
+            <div class="card" style="width: 18rem;" data-tag="fashion"> <!-- Fashion card -->
                 <img src="images/fashion2.webp" class="card-img-top mt-2" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Brand Fashion Indonesia Lebarkan Bisnis ke Belanda</h5>
                     <p class="card-text text-body-secondary">Brand fashion Indonesia, Bhumitala akhirnya melebarkan
-                        sayap bisnis hingga ke Eropa.</p>
+                        sayap bisnis
+                        hingga ke Eropa.</p>
                     <a href="https://wartaekonomi.co.id/read547506/brand-fashion-indonesia-lebarkan-bisnis-ke-belanda"
                         class="btn btn-secondary">Visit Site</a>
                     <div class="btn btn-light">Fashion</div>
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;"> <!-- Card -->
+            <div class="card" style="width: 18rem;" data-tag="trends"> <!-- Trends card -->
                 <img src="images/trends1.jpg" class="card-img-top mt-2" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Fresh faced? Experimenting with the 'boyfriend blush' trend that's all over
-                        my TikTok</h5>
+                        my TikTok
+                    </h5>
                     <p class="card-text text-body-secondary">Boyfriend blush is all over my social media right now
-                        (that, and Jacob Elordi for Bottega Veneta).</p>
+                        (that, and
+                        Jacob Elordi for Bottega Veneta).</p>
                     <a href="https://www.russh.com/boyfriend-blush-trend-how-to-recreate/"
-                        class="btn btn-secondary">Visit Site</a>
+                        class="btn btn-secondary">Visit
+                        Site</a>
                     <div class="btn btn-light">Trends</div>
                 </div>
             </div>
-        </div> <!-- Row End -->
+        </div><!-- Row End -->
     </div>
 
     <div class="container mt-5 mb-5">
@@ -232,6 +239,46 @@
     myModal.addEventListener('shown.bs.modal', () => {
         myInput.focus()
     })
+</script>
+
+<script>
+    // Search function
+    document.querySelector('form[role="search"]').addEventListener('submit', function (event) {
+        event.preventDefault();  // Prevents the form from refreshing the page
+
+        const searchQuery = document.querySelector('input[type="search"]').value.toLowerCase();
+        const wellnessCards = document.querySelectorAll('#wellness-cards .card'); // Only target cards inside this container
+
+        wellnessCards.forEach(card => {
+            const cardText = card.innerText.toLowerCase();
+            if (cardText.includes(searchQuery)) {
+                card.style.display = 'block';  // Show matching cards
+            } else {
+                card.style.display = 'none';   // Hide non-matching cards
+            }
+        });
+    });
+</script>
+
+<script>
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+
+            const filter = event.target.getAttribute('data-filter');
+            const fashionCards = document.querySelectorAll('#fashion-cards .card');
+
+            fashionCards.forEach(card => {
+                const cardTag = card.getAttribute('data-tag');
+
+                if (filter === 'all' || cardTag === filter) {
+                    card.style.display = 'block';  // Show cards that match the filter or show all
+                } else {
+                    card.style.display = 'none';   // Hide non-matching cards
+                }
+            });
+        });
+    });
 </script>
 
 </html>
