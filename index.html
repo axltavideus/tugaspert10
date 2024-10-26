@@ -129,15 +129,11 @@
             fashion tips, and more.</p>
 
         <div class="dropdown w-100">
-            <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Explore Options
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="#" data-filter="all">All</a></li>
-                <li><a class="dropdown-item" href="#" data-filter="fashion">Fashion</a></li>
-                <li><a class="dropdown-item" href="#" data-filter="trends">Trends</a></li>
-            </ul>
+            <div class="btn-group">
+                <a href="#" class="btn active" data-filter="all" id="link-ft">All</a>
+                <a href="#" class="btn" data-filter="fashion" id="link-ft">Fashion</a>
+                <a href="#" class="btn" data-filter="trends" id="link-ft">Trends</a>
+            </div>
         </div>
 
         <div class="row grid gap-3 column-gap-3 ms-0 mt-3" id="fashion-cards">
@@ -250,31 +246,57 @@
 
         const searchQuery = document.querySelector('input[type="search"]').value.toLowerCase();
         const wellnessCards = document.querySelectorAll('#wellness-cards .card'); // Only target cards inside this container
+        let found = false; // Track if any cards match the search query
 
         wellnessCards.forEach(card => {
             const cardText = card.innerText.toLowerCase();
             if (cardText.includes(searchQuery)) {
                 card.style.display = 'block';  // Show matching cards
+                found = true;
             } else {
                 card.style.display = 'none';   // Hide non-matching cards
             }
         });
+
+        // Check if any cards were found
+        let notFoundMessage = document.getElementById('not-found');
+        if (!found) {
+            // Display 'Not Found' message if no results match
+            if (!notFoundMessage) {
+                notFoundMessage = document.createElement('p');
+                notFoundMessage.id = 'not-found';
+                notFoundMessage.className = 'text-muted mt-3';
+                notFoundMessage.innerText = 'No results found for your search.';
+                document.querySelector('#wellness-cards').appendChild(notFoundMessage);
+            }
+        } else if (notFoundMessage) {
+            // Remove 'Not Found' message if there are matching results
+            notFoundMessage.remove();
+        }
     });
+
 </script>
 
 <script>
-    document.querySelectorAll('.dropdown-item').forEach(item => {
-        item.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent the default anchor behavior
+    document.querySelectorAll('#link-ft').forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default anchor behavior
 
-            const filter = event.target.getAttribute('data-filter');
+            // Remove active class from all filter links
+            document.querySelectorAll('#link-ft').forEach(link => link.classList.remove('active'));
+
+            // Add active class to the clicked link
+            this.classList.add('active');
+
+            // Get filter type from the clicked link's data-filter attribute
+            const filter = this.getAttribute('data-filter');
             const fashionCards = document.querySelectorAll('#fashion-cards .card');
 
+            // Show or hide cards based on the filter
             fashionCards.forEach(card => {
                 const cardTag = card.getAttribute('data-tag');
-
                 if (filter === 'all' || cardTag === filter) {
-                    card.style.display = 'block';  // Show cards that match the filter or show all
+                    card.style.display = 'block';  // Show cards that match the filter
                 } else {
                     card.style.display = 'none';   // Hide non-matching cards
                 }
