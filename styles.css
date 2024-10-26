@@ -34,3 +34,8 @@
     margin: auto;
     margin-top: 3%;
 }
+
+.card img {
+    height: 180px;
+    object-fit: cover;
+}

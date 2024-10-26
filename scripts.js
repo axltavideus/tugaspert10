@@ -110,6 +110,13 @@ $(document).ready(function () {
             image: 'images/trends1.jpg',
             link: 'https://www.russh.com/boyfriend-blush-trend-how-to-recreate/',
             tags: 'trends'
+        },
+        {
+            title: "How the Speedy Bag Became a New Menswear Favorite",
+            text: "One of the first designer items I ever lusted over was a Louis Vuitton Speedy bag.",
+            image: 'images/trends2.jpg',
+            link: 'https://www.vogue.com/article/louis-vuitton-speedy-bag-menswear-trend',
+            tags: 'trends'
         }
     ];
 
