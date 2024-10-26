@@ -12,7 +12,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Lifestyle</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -27,13 +27,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary rounded-pill" href="#" role="button">Subscribe</a>
                     </li>
                 </ul>
             </div>
@@ -191,7 +188,7 @@
 
     <div class="container mt-5 mb-5">
         <div class="card">
-            <h5 class="card-header">Featured</h5>
+            <h5 class="card-header">Join Our Community</h5>
             <div class="card-body">
                 <h5 class="card-title">Subscribe to our newsletter!</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -208,16 +205,21 @@
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Join Our Community</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="container mt-3 mb-3">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Name" aria-label="Name">
-                        <span class="input-group-text">@</span>
-                        <input type="text" class="form-control" placeholder="Email" aria-label="Email">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">@</span>
+                        <input type="text" class="form-control" placeholder="Email" aria-label="Email"
+                            aria-describedby="addon-wrapping">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </div>
