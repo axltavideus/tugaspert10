@@ -85,41 +85,7 @@
 
 
         <div class="row grid gap-3 column-gap-3 ms-0" id="wellness-cards">
-            <div class="card" style="width: 18rem;"> <!-- Card -->
-                <img src="images/news1.jpeg" class="card-img-top mt-2" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Apakah "Pound Fit" Bisa Dilakukan di Rumah Tanpa Instruktur?</h5>
-                    <p class="card-text text-body-secondary">Pernahkah kamu melihat sekelompok orang yang sedang latihan
-                        pound fit?</p>
-                    <a href="https://lifestyle.kompas.com/read/2024/10/25/091045120/apakah-pound-fit-bisa-dilakukan-di-rumah-tanpa-instruktur"
-                        class="btn btn-secondary">Visit Site</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;"> <!-- Card -->
-                <img src="images/news2.jpg" class="card-img-top mt-2" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Jangan Anggap Sepele, Stres Dapat Meningkatkan Risiko Stroke</h5>
-                    <p class="card-text text-body-secondary">Di tengah kesibukan dan tekanan hidup yang semakin
-                        meningkat, stres telah
-                        menjadi bagian tak terpisahkan dari kehidupan
-                        banyak orang.</p>
-                    <a href="https://lifestyle.kompas.com/read/2024/10/25/173100620/jangan-anggap-sepele-stres-dapat-meningkatkan-risiko-stroke"
-                        class="btn btn-secondary">Visit Site</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;"> <!-- Card -->
-                <img src="images/news3.jpeg" class="card-img-top mt-2" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">6 Taman Wisata Favorit Warga, Dulu Viral Kini Angker & Diabaikan</h5>
-                    <p class="card-text text-body-secondary">Sejumlah tempat wisata yang dahulu begitu populer dan ramai
-                        kini sudah kehilangan pesonanya. Bahkan banyak juga yang
-                        bernasib menyedihkan dan terlantar.</p>
-                    <a href="https://www.cnbcindonesia.com/lifestyle/20241022094747-33-581959/6-taman-wisata-favorit-warga-dulu-viral-kini-angker-diabaikan"
-                        class="btn btn-secondary">Visit Site</a>
-                </div>
-            </div>
+            <!-- Div for cards to show up -->
         </div> <!-- Row End -->
     </div>
 
@@ -127,59 +93,18 @@
         <p class="fs-3 mt-4 mb-0">Explore Fashion & Trends</p>
         <p class="fs-5 text-body-secondary mt-0">Stay ahead in fashion with insights into what's trending, sustainable
             fashion tips, and more.</p>
-
         <div class="dropdown w-100">
             <div class="btn-group">
-                <a href="#" class="btn active" data-filter="all" id="link-ft">All</a>
-                <a href="#" class="btn" data-filter="fashion" id="link-ft">Fashion</a>
-                <a href="#" class="btn" data-filter="trends" id="link-ft">Trends</a>
+                <a class="btn active link-ft" data-filter="all">All</a>
+                <a class="btn link-ft" data-filter="fashion">Fashion</a>
+                <a class="btn link-ft" data-filter="trends">Trends</a>
             </div>
         </div>
 
+
         <div class="row grid gap-3 column-gap-3 ms-0 mt-3" id="fashion-cards">
-            <div class="card" style="width: 18rem;" data-tag="fashion"> <!-- Fashion card -->
-                <img src="images/fashion1.webp" class="card-img-top mt-2" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">IN2MF 2024 Dorong Akselerasi Pengembangan Sektor Modest Fashion di Indonesia
-                    </h5>
-                    <p class="card-text text-body-secondary">Bank Indonesia, Kementerian Koperasi dan UKM RI, dan
-                        Indonesian
-                        Fashion Chamber</p>
-                    <a href="https://www.beritasatu.com/ekonomi/2850792/in2mf-2024-dorong-akselerasi-pengembangan-sektor-modest-fashion-di-indonesia"
-                        class="btn btn-secondary">Visit Site</a>
-                    <div class="btn btn-light">Fashion</div>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;" data-tag="fashion"> <!-- Fashion card -->
-                <img src="images/fashion2.webp" class="card-img-top mt-2" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Brand Fashion Indonesia Lebarkan Bisnis ke Belanda</h5>
-                    <p class="card-text text-body-secondary">Brand fashion Indonesia, Bhumitala akhirnya melebarkan
-                        sayap bisnis
-                        hingga ke Eropa.</p>
-                    <a href="https://wartaekonomi.co.id/read547506/brand-fashion-indonesia-lebarkan-bisnis-ke-belanda"
-                        class="btn btn-secondary">Visit Site</a>
-                    <div class="btn btn-light">Fashion</div>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;" data-tag="trends"> <!-- Trends card -->
-                <img src="images/trends1.jpg" class="card-img-top mt-2" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Fresh faced? Experimenting with the 'boyfriend blush' trend that's all over
-                        my TikTok
-                    </h5>
-                    <p class="card-text text-body-secondary">Boyfriend blush is all over my social media right now
-                        (that, and
-                        Jacob Elordi for Bottega Veneta).</p>
-                    <a href="https://www.russh.com/boyfriend-blush-trend-how-to-recreate/"
-                        class="btn btn-secondary">Visit
-                        Site</a>
-                    <div class="btn btn-light">Trends</div>
-                </div>
-            </div>
-        </div><!-- Row End -->
+            <!-- Where the fashion cards show up -->
+        </div>
     </div>
 
     <div class="container mt-5 mb-5">
@@ -223,86 +148,7 @@
 
 </body>
 
-<script>
-    const myCarouselElement = document.querySelector('#carouselExampleFade')
-
-    const carousel = new bootstrap.Carousel(myCarouselElement, {
-        interval: 2000,
-        touch: false
-    })
-
-    const myModal = document.getElementById('myModal')
-    const myInput = document.getElementById('myInput')
-
-    myModal.addEventListener('shown.bs.modal', () => {
-        myInput.focus()
-    })
-</script>
-
-<script>
-    // Search function
-    document.querySelector('form[role="search"]').addEventListener('submit', function (event) {
-        event.preventDefault();  // Prevents the form from refreshing the page
-
-        const searchQuery = document.querySelector('input[type="search"]').value.toLowerCase();
-        const wellnessCards = document.querySelectorAll('#wellness-cards .card'); // Only target cards inside this container
-        let found = false; // Track if any cards match the search query
-
-        wellnessCards.forEach(card => {
-            const cardText = card.innerText.toLowerCase();
-            if (cardText.includes(searchQuery)) {
-                card.style.display = 'block';  // Show matching cards
-                found = true;
-            } else {
-                card.style.display = 'none';   // Hide non-matching cards
-            }
-        });
-
-        // Check if any cards were found
-        let notFoundMessage = document.getElementById('not-found');
-        if (!found) {
-            // Display 'Not Found' message if no results match
-            if (!notFoundMessage) {
-                notFoundMessage = document.createElement('p');
-                notFoundMessage.id = 'not-found';
-                notFoundMessage.className = 'text-muted mt-3';
-                notFoundMessage.innerText = 'No results found for your search.';
-                document.querySelector('#wellness-cards').appendChild(notFoundMessage);
-            }
-        } else if (notFoundMessage) {
-            // Remove 'Not Found' message if there are matching results
-            notFoundMessage.remove();
-        }
-    });
-
-</script>
-
-<script>
-    document.querySelectorAll('#link-ft').forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default anchor behavior
-
-            // Remove active class from all filter links
-            document.querySelectorAll('#link-ft').forEach(link => link.classList.remove('active'));
-
-            // Add active class to the clicked link
-            this.classList.add('active');
-
-            // Get filter type from the clicked link's data-filter attribute
-            const filter = this.getAttribute('data-filter');
-            const fashionCards = document.querySelectorAll('#fashion-cards .card');
-
-            // Show or hide cards based on the filter
-            fashionCards.forEach(card => {
-                const cardTag = card.getAttribute('data-tag');
-                if (filter === 'all' || cardTag === filter) {
-                    card.style.display = 'block';  // Show cards that match the filter
-                } else {
-                    card.style.display = 'none';   // Hide non-matching cards
-                }
-            });
-        });
-    });
-</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="scripts.js"></script>
 
 </html>
